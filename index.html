@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Currency Converter Pro</title>
+
+    <meta name="description" content="Professional Currency Converter built with HTML, CSS and JavaScript">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tom Select CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>💱 Currency Converter Pro</h1>
+
+        <button id="themeBtn" aria-label="Toggle Theme">
+
+            🌙
+
+        </button>
+
+    </header>
+
+    <!-- Converter -->
+
+    <section class="converter-card">
+
+        <h2>Convert Currency</h2>
+
+        <!-- Amount -->
+
+        <div class="input-group">
+
+            <label for="amount">Amount</label>
+
+            <input
+                type="number"
+                id="amount"
+                value="1"
+                min="1"
+                placeholder="Enter Amount"
+                autocomplete="off">
+
+        </div>
+
+        <!-- From -->
+
+        <div class="input-group">
+
+            <label for="fromCurrency">From Currency</label>
+
+            <select id="fromCurrency"></select>
+
+        </div>
+
+        <!-- Swap -->
+
+        <button id="swapBtn">
+
+            🔄 Swap Currency
+
+        </button>
+
+        <!-- To -->
+
+        <div class="input-group">
+
+            <label for="toCurrency">To Currency</label>
+
+            <select id="toCurrency"></select>
+
+        </div>
+
+        <!-- Convert -->
+
+        <button id="convertBtn">
+
+            💱 Convert Currency
+
+        </button>
+
+    </section>
+
+    <!-- Result -->
+
+    <section class="result-card">
+
+        <h2>Conversion Result</h2>
+
+        <h3 id="result">
+
+            0.00
+
+        </h3>
+
+        <p id="rate">
+
+            Exchange Rate
+
+        </p>
+
+        <small id="updated">
+
+            Last Updated : --
+
+        </small>
+
+        <button id="copyBtn">
+
+            📋 Copy Result
+
+        </button>
+
+    </section>
+
+    <!-- Conversion History -->
+
+    <section class="history-card">
+
+        <div class="history-header">
+
+            <h2>📊 Conversion History</h2>
+
+            <button id="clearHistoryBtn">
+
+                Clear
+
+            </button>
+
+        </div>
+
+        <div id="historyList">
+
+            No History Yet
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- Toast -->
+
+<div id="toast"></div>
+
+<!-- Tom Select -->
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+
+<!-- Main JS -->
+<script src="assets/js/app.js"></script>
+
+</body>
+
+</html>

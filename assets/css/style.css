@@ -1,0 +1,513 @@
+/* =====================================
+   Currency Converter Pro
+   Author: Muhammad Uzair
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    transition:.35s;
+    padding:25px;
+}
+
+body.light-mode{
+    background:linear-gradient(135deg,#e2e8f0,#f8fafc);
+    color:#111827;
+}
+
+.container{
+    width:100%;
+    max-width:520px;
+}
+
+/* ==========================
+   Header
+========================== */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+header h1{
+    font-size:30px;
+    font-weight:700;
+}
+
+#themeBtn{
+    width:52px;
+    height:52px;
+    border:none;
+    border-radius:50%;
+    background:#2563eb;
+    color:#fff;
+    cursor:pointer;
+    font-size:20px;
+    transition:.3s;
+}
+
+#themeBtn:hover{
+
+    transform:rotate(20deg) scale(1.08);
+
+}
+
+/* ==========================
+   Cards
+========================== */
+
+.converter-card,
+.result-card{
+
+    background:rgba(30,41,59,.88);
+
+    backdrop-filter:blur(14px);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+}
+
+.converter-card:hover,
+.result-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+body.light-mode .converter-card,
+body.light-mode .result-card{
+
+    background:rgba(255,255,255,.92);
+
+}
+
+/* ==========================
+   Titles
+========================== */
+
+.converter-card h2,
+.result-card h2{
+
+    text-align:center;
+
+    margin-bottom:22px;
+
+}
+
+/* ==========================
+   Inputs
+========================== */
+
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:2px solid transparent;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+input:focus,
+select:focus{
+
+    border-color:#3b82f6;
+
+    box-shadow:0 0 0 4px rgba(59,130,246,.2);
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    background:#1d4ed8;
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+#swapBtn{
+
+    background:#0ea5e9;
+
+    margin-bottom:18px;
+
+}
+
+#swapBtn:hover{
+
+    background:#0284c7;
+
+}
+
+#copyBtn{
+
+    margin-top:20px;
+
+    background:#16a34a;
+
+}
+
+#copyBtn:hover{
+
+    background:#15803d;
+
+}
+
+/* ==========================
+   Result
+========================== */
+
+.result-card{
+
+    text-align:center;
+
+}
+
+#result{
+
+    margin:18px 0;
+
+    font-size:38px;
+
+    color:#22c55e;
+
+    font-weight:700;
+
+    word-break:break-word;
+
+}
+
+#rate{
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+}
+
+#updated{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#94a3b8;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+footer{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    font-size:14px;
+
+    color:#94a3b8;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:600px){
+
+header h1{
+
+    font-size:23px;
+
+}
+
+.converter-card,
+.result-card{
+
+    padding:20px;
+
+}
+
+button{
+
+    font-size:16px;
+
+}
+
+#result{
+
+    font-size:30px;
+
+}
+
+}
+/* =====================================
+   History Card
+===================================== */
+
+.history-card{
+
+    background:rgba(30,41,59,.88);
+
+    backdrop-filter:blur(14px);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+body.light-mode .history-card{
+
+    background:rgba(255,255,255,.92);
+
+}
+
+.history-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.history-header h2{
+
+    font-size:22px;
+
+}
+
+#clearHistoryBtn{
+
+    width:auto;
+
+    padding:10px 18px;
+
+    background:#ef4444;
+
+}
+
+#clearHistoryBtn:hover{
+
+    background:#dc2626;
+
+}
+
+#historyList{
+
+    max-height:260px;
+
+    overflow-y:auto;
+
+}
+
+.history-item{
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    margin-bottom:12px;
+
+    line-height:1.7;
+
+}
+
+body.light-mode .history-item{
+
+    background:#f3f4f6;
+
+}
+
+
+/* =====================================
+   Toast Notification
+===================================== */
+
+#toast{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    padding:15px 22px;
+
+    border-radius:12px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.35s;
+
+    z-index:9999;
+
+    font-weight:600;
+
+}
+
+#toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* =====================================
+   Tom Select
+===================================== */
+
+.ts-control{
+
+    border-radius:12px !important;
+
+    padding:12px !important;
+
+    border:none !important;
+
+}
+
+.ts-dropdown{
+
+    border-radius:12px !important;
+
+}
+
+.ts-dropdown .option{
+
+    padding:12px;
+
+}
+
+.ts-dropdown .active{
+
+    background:#2563eb !important;
+
+    color:#fff !important;
+
+}
+
+
+/* =====================================
+   Scrollbar
+===================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
